@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#################
+# Author: Shifa Khan
+#Date: 04-26-2024
+# To display aws resources information
+############################
+#To display buckets
+echo 'List of s3 Buckets' 
+aws s3 ls
+#To display instaces
+echo 'List of EC2 instances' 
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+#To display lambda functions
+echo 'List of lambda functions'
+aws lambda list-functions
+
+#To display list of IAM users
+echo 'List of IAM users'
+aws iam list-users
